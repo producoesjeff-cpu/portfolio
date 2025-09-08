@@ -43,7 +43,8 @@ class GafferPortfolioTester:
     def test_health_endpoint(self):
         """Test GET /health endpoint"""
         try:
-            response = self.session.get(f"{self.base_url}/health", timeout=10)
+            # Test on backend port directly since external routing may go to frontend
+            response = self.session.get("http://localhost:8001/health", timeout=10)
             
             if response.status_code == 200:
                 data = response.json()
