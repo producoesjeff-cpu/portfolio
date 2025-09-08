@@ -118,7 +118,7 @@ const TitleTransition = () => {
             justifyContent: 'center',
             gap: '0.5rem'
           }}>
-            📍 {personal.location}
+            📍 {personal?.location || 'São Paulo & Rio de Janeiro'}
           </p>
         </div>
       </div>
