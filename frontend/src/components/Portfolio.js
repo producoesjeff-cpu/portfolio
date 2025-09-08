@@ -1,6 +1,6 @@
 import React from 'react';
 import { ExternalLink, Calendar, Tag } from 'lucide-react';
-import { portfolioData } from '../data/mock';
+import { usePortfolio } from '../hooks/usePortfolio';
 
 const Portfolio = () => {
   const { featuredWorks, recentProjects } = portfolioData;
