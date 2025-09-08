@@ -330,7 +330,15 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Admin Portfolio Management"
+    - "Hero Section Fullscreen"
+    - "Title Transition Animation"
+    - "Portfolio with Backend Data"
+    - "Contact Form Integration"
+    - "Navigation Menu"
+    - "Services Section"
+    - "Clients Section"
+    - "Personal Information Display"
+    - "Responsive Design"
   stuck_tasks:
     - "Admin Portfolio Management"
   test_all: false
