@@ -1,6 +1,47 @@
-// Mock data para o portfólio do Jeferson Rodrigues - Gaffer
+// Dados do portfólio - agora integrado com backend
+import axios from 'axios';
 
-export const portfolioData = {
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
+
+// Cache dos dados
+let portfolioCache = null;
+let cacheTimestamp = null;
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutos
+
+// Função para buscar dados do backend
+export const fetchPortfolioData = async () => {
+  try {
+    // Verificar cache
+    if (portfolioCache && cacheTimestamp && (Date.now() - cacheTimestamp < CACHE_DURATION)) {
+      return portfolioCache;
+    }
+
+    const response = await axios.get(`${API}/portfolio`);
+    portfolioCache = response.data;
+    cacheTimestamp = Date.now();
+    
+    return portfolioCache;
+  } catch (error) {
+    console.error('Erro ao buscar dados do portfólio:', error);
+    // Fallback para dados mock
+    return mockPortfolioData;
+  }
+};
+
+// Função para enviar mensagem de contato
+export const sendContactMessage = async (messageData) => {
+  try {
+    const response = await axios.post(`${API}/contact`, messageData);
+    return response.data;
+  } catch (error) {
+    console.error('Erro ao enviar mensagem:', error);
+    throw error;
+  }
+};
+
+// Dados mock como fallback
+export const mockPortfolioData = {
   // Informações pessoais
   personal: {
     name: "Jeferson Rodrigues",
