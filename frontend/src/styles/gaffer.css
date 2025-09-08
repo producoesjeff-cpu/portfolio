@@ -542,6 +542,18 @@ body {
   }
 }
 
+/* Title Transition Section */
+.title-transition {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.title-transition.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Animações de entrada */
 .fade-in-up {
   opacity: 0;
