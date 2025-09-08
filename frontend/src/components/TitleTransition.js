@@ -87,7 +87,7 @@ const TitleTransition = () => {
               textTransform: 'uppercase',
               margin: 0
             }}>
-              {personal.role}
+              {personal?.role || 'Gaffer | Iluminação Audiovisual'}
             </p>
             
             <div style={{
