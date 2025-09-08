@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { usePortfolio } from '../hooks/usePortfolio';
 
 const TitleTransition = () => {
-  const { personal } = portfolioData;
+  const { data: portfolioData, loading } = usePortfolio();
+  const { personal } = portfolioData || {};
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
