@@ -103,6 +103,10 @@ async def get_admin_portfolio(current_admin: AdminUser = Depends(get_current_adm
                 detail="Portfólio não encontrado"
             )
         
+        # Converter ObjectId para string para serialização JSON
+        if "_id" in portfolio:
+            portfolio["_id"] = str(portfolio["_id"])
+        
         return portfolio
         
     except Exception as e:
