@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Instagram, Linkedin, Youtube, MessageSquare } from 'lucide-react';
-import { portfolioData } from '../data/mock';
+import { usePortfolio } from '../hooks/usePortfolio';
+import { sendContactMessage } from '../data/mock';
 import { useToast } from '../hooks/use-toast';
 
 const Contact = () => {
