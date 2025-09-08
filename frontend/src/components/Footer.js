@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Instagram, Linkedin, Youtube, MessageSquare, Heart } from 'lucide-react';
-import { portfolioData } from '../data/mock';
+import { usePortfolio } from '../hooks/usePortfolio';
 
 const Footer = () => {
   const { personal } = portfolioData;
