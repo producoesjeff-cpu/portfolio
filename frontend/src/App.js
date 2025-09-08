@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Importar componentes
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import TitleTransition from "./components/TitleTransition";
 import Portfolio from "./components/Portfolio";
 import About from "./components/About";
 import Services from "./components/Services";
