@@ -201,6 +201,4 @@ export const mockPortfolioData = {
   ]
 };
 
-};
-
 export default mockPortfolioData;
