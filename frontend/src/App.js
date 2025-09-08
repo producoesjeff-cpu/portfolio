@@ -26,6 +26,7 @@ const GafferPortfolio = () => {
     }}>
       <Header />
       <Hero />
+      <TitleTransition />
       <Portfolio />
       <About />
       <Services />
