@@ -3,7 +3,29 @@ import { Play } from 'lucide-react';
 import { usePortfolio } from '../hooks/usePortfolio';
 
 const Hero = () => {
-  const { demoReel } = portfolioData;
+  const { data: portfolioData, loading } = usePortfolio();
+  
+  if (loading) {
+    return (
+      <section id="home" className="hero-fullscreen">
+        <div className="demo-reel-fullscreen">
+          <div className="demo-reel-placeholder-fullscreen">
+            <div className="placeholder-content">
+              <div style={{ 
+                color: '#FFDB67', 
+                fontSize: '1.2rem',
+                textAlign: 'center' 
+              }}>
+                Carregando...
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+  
+  const { demoReel } = portfolioData || {};
 
   return (
     <section id="home" className="hero-fullscreen">
