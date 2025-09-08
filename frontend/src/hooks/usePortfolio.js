@@ -7,20 +7,6 @@ export const usePortfolio = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const loadData = async () => {
-      try {
-        setLoading(true);
-        const portfolioData = await fetchPortfolioData();
-        setData(portfolioData);
-        setError(null);
-      } catch (err) {
-        setError(err.message);
-        console.error('Erro ao carregar portfólio:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     loadData();
   }, []);
 
