@@ -55,6 +55,20 @@ const Contact = () => {
     }
   };
 
+  if (loading) {
+    return (
+      <section id="contact" className="section-spacing-large" style={{ background: 'var(--darker-bg)' }}>
+        <div className="container-gaffer">
+          <div style={{ textAlign: 'center', padding: '4rem 0' }}>
+            <p style={{ color: '#FFDB67', fontSize: '1.2rem' }}>Carregando informações de contato...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+  
+  const { personal } = portfolioData || {};
+  
   const socialLinks = [
     {
       name: 'Instagram',
