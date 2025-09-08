@@ -1,6 +1,6 @@
 import React from 'react';
 import { Lightbulb, Camera, Settings, Palette } from 'lucide-react';
-import { portfolioData } from '../data/mock';
+import { usePortfolio } from '../hooks/usePortfolio';
 
 const Services = () => {
   const { services } = portfolioData;
