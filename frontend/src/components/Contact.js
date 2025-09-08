@@ -5,7 +5,7 @@ import { sendContactMessage } from '../data/mock';
 import { useToast } from '../hooks/use-toast';
 
 const Contact = () => {
-  const { personal } = portfolioData;
+  const { data: portfolioData, loading } = usePortfolio();
   const { toast } = useToast();
   
   const [formData, setFormData] = useState({
