@@ -1,5 +1,5 @@
 import React from 'react';
-import { portfolioData } from '../data/mock';
+import { usePortfolio } from '../hooks/usePortfolio';
 
 const Clients = () => {
   const { clients } = portfolioData;
