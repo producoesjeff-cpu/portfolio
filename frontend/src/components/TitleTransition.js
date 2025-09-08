@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { portfolioData } from '../data/mock';
+import { usePortfolio } from '../hooks/usePortfolio';
 
 const TitleTransition = () => {
   const { personal } = portfolioData;
