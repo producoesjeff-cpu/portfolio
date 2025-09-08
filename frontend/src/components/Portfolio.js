@@ -3,7 +3,21 @@ import { ExternalLink, Calendar, Tag } from 'lucide-react';
 import { usePortfolio } from '../hooks/usePortfolio';
 
 const Portfolio = () => {
-  const { featuredWorks, recentProjects } = portfolioData;
+  const { data: portfolioData, loading } = usePortfolio();
+  
+  if (loading) {
+    return (
+      <section id="portfolio" className="section-spacing" style={{ background: 'var(--dark-bg)' }}>
+        <div className="container-gaffer">
+          <div style={{ textAlign: 'center', padding: '4rem 0' }}>
+            <p style={{ color: '#FFDB67', fontSize: '1.2rem' }}>Carregando portfólio...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+  
+  const { featuredWorks, recentProjects } = portfolioData || {};
 
   const ProjectCard = ({ project, featured = false }) => (
     <div className={`project-card ${featured ? 'featured' : ''}`}>
