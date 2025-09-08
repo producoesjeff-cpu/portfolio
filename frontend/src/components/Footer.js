@@ -3,7 +3,21 @@ import { Mail, Phone, MapPin, Instagram, Linkedin, Youtube, MessageSquare, Heart
 import { usePortfolio } from '../hooks/usePortfolio';
 
 const Footer = () => {
-  const { personal } = portfolioData;
+  const { data: portfolioData, loading } = usePortfolio();
+  
+  if (loading) {
+    return (
+      <footer className="footer-cinematic">
+        <div className="container-gaffer">
+          <div style={{ textAlign: 'center', padding: '2rem 0' }}>
+            <p style={{ color: '#FFDB67' }}>Carregando...</p>
+          </div>
+        </div>
+      </footer>
+    );
+  }
+  
+  const { personal } = portfolioData || {};
   
   const currentYear = new Date().getFullYear();
 
