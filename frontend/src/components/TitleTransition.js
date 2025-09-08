@@ -6,11 +6,6 @@ const TitleTransition = () => {
   const { personal } = portfolioData || {};
   const [isVisible, setIsVisible] = useState(false);
 
-  // Don't render if data is still loading or personal data is not available
-  if (loading || !personal) {
-    return null;
-  }
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -27,6 +22,11 @@ const TitleTransition = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Don't render if data is still loading or personal data is not available
+  if (loading || !personal) {
+    return null;
+  }
 
   return (
     <section 
