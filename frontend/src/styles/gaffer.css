@@ -118,8 +118,8 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(15, 15, 16, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
   z-index: 1000;
   padding: var(--spacing-sm) 0;
   transition: all var(--transition-smooth);
