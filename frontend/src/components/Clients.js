@@ -2,7 +2,21 @@ import React from 'react';
 import { usePortfolio } from '../hooks/usePortfolio';
 
 const Clients = () => {
-  const { clients } = portfolioData;
+  const { data: portfolioData, loading } = usePortfolio();
+  
+  if (loading) {
+    return (
+      <section className="section-spacing" style={{ background: 'var(--dark-bg)' }}>
+        <div className="container-gaffer">
+          <div style={{ textAlign: 'center', padding: '4rem 0' }}>
+            <p style={{ color: '#FFDB67', fontSize: '1.2rem' }}>Carregando clientes...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+  
+  const { clients } = portfolioData || {};
 
   return (
     <section className="section-spacing" style={{ 
