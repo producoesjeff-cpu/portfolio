@@ -1,6 +1,6 @@
 import React from 'react';
 import { Play } from 'lucide-react';
-import { portfolioData } from '../data/mock';
+import { usePortfolio } from '../hooks/usePortfolio';
 
 const Hero = () => {
   const { demoReel } = portfolioData;
