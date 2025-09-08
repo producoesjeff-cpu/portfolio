@@ -29,9 +29,8 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulação de envio (será implementado com EmailJS depois)
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await sendContactMessage(formData);
       
       toast({
         title: "Mensagem enviada!",
