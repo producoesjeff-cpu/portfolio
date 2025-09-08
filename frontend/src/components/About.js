@@ -3,7 +3,21 @@ import { MapPin, Award, Users, Clock } from 'lucide-react';
 import { usePortfolio } from '../hooks/usePortfolio';
 
 const About = () => {
-  const { personal } = portfolioData;
+  const { data: portfolioData, loading } = usePortfolio();
+  
+  if (loading) {
+    return (
+      <section id="about" className="section-spacing-large" style={{ background: 'var(--darker-bg)' }}>
+        <div className="container-gaffer">
+          <div style={{ textAlign: 'center', padding: '4rem 0' }}>
+            <p style={{ color: '#FFDB67', fontSize: '1.2rem' }}>Carregando informações...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+  
+  const { personal } = portfolioData || {};
 
   const stats = [
     {
