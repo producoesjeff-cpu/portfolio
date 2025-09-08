@@ -3,7 +3,21 @@ import { Lightbulb, Camera, Settings, Palette } from 'lucide-react';
 import { usePortfolio } from '../hooks/usePortfolio';
 
 const Services = () => {
-  const { services } = portfolioData;
+  const { data: portfolioData, loading } = usePortfolio();
+  
+  if (loading) {
+    return (
+      <section id="services" className="section-spacing" style={{ background: 'var(--dark-bg)' }}>
+        <div className="container-gaffer">
+          <div style={{ textAlign: 'center', padding: '4rem 0' }}>
+            <p style={{ color: '#FFDB67', fontSize: '1.2rem' }}>Carregando serviços...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+  
+  const { services } = portfolioData || {};
 
   const getIcon = (iconName) => {
     const icons = {
