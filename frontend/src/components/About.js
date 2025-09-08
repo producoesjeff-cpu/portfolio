@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin, Award, Users, Clock } from 'lucide-react';
-import { portfolioData } from '../data/mock';
+import { usePortfolio } from '../hooks/usePortfolio';
 
 const About = () => {
   const { personal } = portfolioData;
